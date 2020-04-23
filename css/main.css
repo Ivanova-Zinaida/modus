@@ -8,7 +8,6 @@ body{
     background-color: #f3f3f3;
     color: #777777;
     font-size: 13px;
-
 }
 /* Начало общих стилей для сайта*/
 
@@ -212,7 +211,6 @@ body{
     display: block;
     z-index: 3;
 }
-
 .arrow-hiden{
     display: none;
 }
@@ -229,7 +227,6 @@ body{
 }
 .slaider__wrapper{
     max-width: 100vw;
-    min-height: 500px;
     height: 500px;
     color: #fff;
     position: relative;
@@ -245,7 +242,6 @@ body{
 }
 .slider{
     width:100%;
-    min-height: inherit;
     height: inherit;
     display: flex;
     position: relative;
@@ -320,13 +316,13 @@ body{
     left: 35%;
 }
 .slider-indicator{
-    position: absolute;
+    width: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    left: 40%;
-    bottom: -30px;
+    justify-content: center;
+    margin-top:20px;
 }
 .slider-indicator__item{
     height: 4px;
@@ -505,7 +501,6 @@ body{
    box-shadow: 0 0  10px 10px #ccc;
     z-index: 4;
 }
-
 .accordion:hover .accordion__item:nth-child(2){
     width: 370px;
     max-height: 260px;
@@ -546,7 +541,6 @@ body{
     top:17px;
     right: 10px;
 }
-
 .block-us__list{
     margin: 0;
     padding: 0;
@@ -848,9 +842,7 @@ svg {
 .breadcrumb{  
     background-color: #ececec;
     margin: 0 auto 50px;
-    max-width: 1500px;
-    
-    
+    max-width: 1500px;   
 }
 .flex-breadcrumb{
    min-height: 80px; 
@@ -1012,7 +1004,6 @@ iframe{
     height: 100%;
     border-radius: 6px;
 }
-
 .card-container{
     width: 100%;
     min-height: 320px;
@@ -1103,9 +1094,9 @@ iframe{
 
 /*Начало стилей секции Portfolio*/
 .slider__wrapper_portfolio{
-    min-height: 700px;
     height: 700px;
     background-image: none;
+    margin-bottom: 70px;
 }
 .slider__img{
     width: 100%;
@@ -1412,12 +1403,6 @@ iframe{
 .features__wrapper_big{
     height: 600px;
 }
-.features_indicator{
-    bottom:-15px;
-}
-.features_indicator_small{
-    left: 35%;
-}
 .features__arrow{
     width: 30px;
     height: 30px;
@@ -1429,11 +1414,9 @@ iframe{
     max-width: 25%;
 }
 .slider_small {
-	min-height: 200px;
     height: 200px;
 }
 .fauters__slider_small{
-   min-height: 200px;
    height: 200px;
 }
 .arrow__features{
@@ -1458,8 +1441,6 @@ iframe{
     border-radius: 6px;
     box-shadow: 0 4px 0 0 #ccc;   
 }
-
-/* Базовый контейнер табов */
 .tabs-container{
     align-items: flex-start;
     margin-bottom: 50px;
@@ -1500,7 +1481,6 @@ iframe{
 	-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
 }
-
 .tabs>input {
 	display: none;
 	position: absolute;
@@ -1518,7 +1498,6 @@ iframe{
 	background: #9d557a;
 	border-radius: 6px 6px 0 0;
 }
-
 .tabs>label:hover {
 	color: #fff;
 	cursor: pointer;
@@ -1584,9 +1563,6 @@ iframe{
     right: 20px;
     font-size: 16px;
 }
-.hidden-icon{
-    display: none;
-}
 .accordion-text{
     padding: 10px 20px;
     display: none;
@@ -1638,7 +1614,6 @@ iframe{
     .slider-logo__wrapper{
         width: 100%;
     }
-    
     .footer__adress {
         max-width: 340px;
     }
@@ -1659,7 +1634,6 @@ iframe{
         margin: 0;
     }
     .slider__wrapper_portfolio{
-        min-height: 600px;
         height: 600px;
     }
     .table-ccontainer{
@@ -1667,9 +1641,6 @@ iframe{
     }
     .slider-logo__portfolio{
         flex: 0 0 30%;
-    }
-    .slider__img{
-        max-height: 600px;
     }
     .aside-blog{
         padding-left: left;
@@ -1689,11 +1660,7 @@ iframe{
         order: -1;
     }
     .slider__prew_gallery{
-        min-height: 500px;
         height: 500px;
-    }
-    .features_indicator_small{
-        bottom:-15px;
     }
     .form-contacts{
         width: 60%;
@@ -1727,7 +1694,7 @@ iframe{
         display: block;
         width: 70px;
         margin-bottom: 10px;
-         position: relative;
+        position: relative;    
     }
     .form-search::before{
         right: 24%;
@@ -1795,10 +1762,6 @@ iframe{
     .footer__title{
         margin-bottom: 15px; 
     }
-    .slider-indicator{
-        left: 36%;
-        bottom: 0;
-    }
     .block-us{
         max-width: 45%;
     }
@@ -1806,11 +1769,8 @@ iframe{
         margin-bottom: 20px;
     }
     .slider__wrapper_portfolio{
-        min-height: 500px;
         height: 500px;
-    }
-    .portfolio-indicator{
-        bottom:-23px;
+        margin-bottom: 60px;
     }
     .project{
         margin-right: 10px;
@@ -1836,25 +1796,14 @@ iframe{
     .aside-blog{
      width: 27%;
     }
-    .slider_indicator_index{
-        bottom:-5%;
-    }
     .fauters__slider_small, .slider_small {
         height: 300px;
      }
     .slider-blog, .slider-blog__wrapper{
-        min-height: 400px;
         height: 400px;
-    }
-    .features_indicator_small{
-        bottom: -25px;
-    }
-    .features__indicator{
-        bottom:-25px;
     }
     .slider-blog__indicator{
         left: 30%;
-        bottom: -26px;
     }
     .form-comments{
         width:100%;
@@ -1883,9 +1832,6 @@ iframe{
         width: 40px;
         height: 40px;
     }
-    .features_indicator_small {
-        bottom: -15px;
-    }
     .features_indicator_small li{
         width: 30px;
     }
@@ -1906,15 +1852,12 @@ iframe{
     .form-title{
         margin-bottom: 20px;
     }
- 
-    
 }
 @media screen and (max-width: 719px){
     .container {
 	      width:540px;
 }
-    .slaider__wrapper,  .slider{
-        min-height: 400px;
+    .slaider__wrapper, .slider{
         height: 400px;
     }
     .slider__title{
@@ -1922,7 +1865,7 @@ iframe{
     }
     .slider__text{
         font-size: 18px;
-}
+    }
     .slider__arrow{
         height: 49px;
         width: 43px;
@@ -1933,17 +1876,11 @@ iframe{
     .arrow__inner_right{
         left: 0;
     }
-     .arrow__features_right{
+    .arrow__features_right{
         left: 25%;
     }
     .arrow__inner_2 {
         left: 29%;
-    }
-    .slider_indicator_index{
-        bottom: -25px;
-    }
-    .slider_indicator{
-        left: 33%;
     }
     .features__arrow{
         width: 40px;
@@ -1955,7 +1892,7 @@ iframe{
         margin-bottom: 20px;
     }
     .info__inner{
-     margin-bottom: 20px;
+         margin-bottom: 20px;
     }
     .info__title{
      font-size: 25px;
@@ -1967,7 +1904,7 @@ iframe{
         flex: 0 0 37%;
     }
     .footer__adress, .footer-blog {
-    width: 60%;
+        width: 60%;
     }
     .about-title{
         margin: 0 0 15px 0;
@@ -2031,7 +1968,7 @@ iframe{
     }
     .form-container{
        flex-wrap: wrap; 
-        margin-bottom: 15px;
+       margin-bottom: 15px;
     }
     .contacts-adress {
         max-width: 100%;
@@ -2050,17 +1987,11 @@ iframe{
     }
     .article-post{
         width: 40%;
-        order: -1;
-    }
-    .article-post{
         order: -2;
     }
     .article-date{
         order: -1;
     }
-}
-.portfolio-indicator, .features__indicator {
-    left: 33%;
 }
 @media screen and (max-width: 576px){
     .container {
@@ -2069,6 +2000,9 @@ iframe{
     }
     .logo{
         display: none;
+    }
+    .info__inner:last-child{
+        margin-left:0;
     }
     .block-us{
         max-width: 100%;
@@ -2088,9 +2022,6 @@ iframe{
     .info{
         padding: 5px;
         width: 100%;
-    }
-    .slider-indicator{
-        left: 20%;
     }
     .services{
         width: 100%;
@@ -2117,7 +2048,6 @@ iframe{
         width: 60%;
     }
     .slaider__wrapper, .slider{
-        min-height: 300px;
         height: 300px;
     }
     .project-table{
@@ -2134,10 +2064,6 @@ iframe{
     .article-post{
         width: 100%;
     }
-    .features_indicator_small {
-        left: 31%;
-        bottom:-17px;
-    }
     .tabs>label{
         padding: 10px 6px;
     }
@@ -2145,23 +2071,19 @@ iframe{
         display:none;
     }
     .features-card{
-        margin-right: 0;
+       margin-right: 0;
     }
    
 }
 @media screen and (max-width: 320px){
     .slaider__wrapper, .slider{
-        min-height: 250px;
         height: 250px;
-    }
-    .slider-indicator {
-        left: 15%;
     }
     .project-table td{
         padding-right: 10px;
         padding-left: 10px;
     }
-    .features_indicator_small{
-        left:29%;
+    .flex-breadcrumb{
+        display: block;
     }
 }
