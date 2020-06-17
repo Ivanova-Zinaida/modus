@@ -10,7 +10,6 @@ body{
     font-size: 13px;
 }
 /* Начало общих стилей для сайта*/
-
 .container{
     width: 1180px;
     margin: 0 auto;
@@ -248,6 +247,20 @@ body{
     overflow-x: hidden;
     justify-content: center;
     align-items: center;
+}
+.slider__main{
+    position: relative;
+}
+.slider__item_main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+.slider__item_main_active{
+    opacity: 1;
+    transition-duration: 3s;
 }
 .slider__item {
     flex: 0 0 100%;
@@ -1452,7 +1465,7 @@ iframe{
 	padding: 0;
 	margin: 0 auto;
 }
-.tabs>section {
+.content-tab{
 	display: none;
 	padding: 15px;
 	background:#fff;
@@ -1470,7 +1483,7 @@ iframe{
     height: 120px;
     margin-left: 20px;
 }
-.tabs>section>p{
+.tabs-text{
 	margin: 0 0 5px;
 	line-height: 1.5;
 	color: #777;
@@ -1481,11 +1494,8 @@ iframe{
 	-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
 }
-.tabs>input {
-	display: none;
-	position: absolute;
-}
-.tabs>label{
+
+.tabs__link{
 	display: inline-block;
 	margin: 0 0 -1px;
 	padding: 15px 25px;
@@ -1497,25 +1507,18 @@ iframe{
 	border-width: 1px 1px 1px 1px;
 	background: #9d557a;
 	border-radius: 6px 6px 0 0;
+    text-decoration: none;
 }
-.tabs>label:hover {
+.active__tabs{
+    display: block;
+}
+.tabs>.tabs__link:hover {
 	color: #fff;
 	cursor: pointer;
     background:#26b9e1;
 }
-.tabs>input:checked+label {
-	color: #777;
-	border-bottom: 1px solid #fff;
-	background:#fff;
-}
-#tab1:checked~#content-tab1,
-#tab2:checked~#content-tab2, 
-#tab3:checked~#content-tab3,
-#tab4:checked~#content-tab4,
-#tabs1:checked~#content-tabs1,
-#tabs2:checked~#content-tabs2
-{
-	display: block;
+.tabs-active{
+    background-color: #26b9e1;
 }
 .tabs__small{
     width: 100%;
