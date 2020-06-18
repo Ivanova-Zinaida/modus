@@ -50,8 +50,7 @@ form.addEventListener('click', function(e){
             li.appendChild(textComment)
             ulComment.appendChild(li)
         }
-        
-        
+         
     } 
-     
+   
 });

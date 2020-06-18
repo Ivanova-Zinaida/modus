@@ -1,156 +1,105 @@
 /* slider*/
 
-let slider = document.querySelector('.slider');
-let sliderItems = document.querySelectorAll('.slider__item_main');
-let sliderIndicator = document.querySelector('.slider-indicator');
-let sliderIndicatorItems = document.querySelectorAll('.slider-indicator__item');
-let sliderArrowLeft = document.querySelector('.slider__arrow_left');
-let sliderArrowRight = document.querySelector('.slider__arrow_right');
 
 
-/*function sliderGo(sliderIndicatorItems, sliderArrowLeft, sliderItems){
-    sliderArrowLeft.addEventListener('click', function(e){
-        e.preventDefault();
-        sliderItems.forEach(function(item){
-            item.classList.add('active_slide');
-        })
+;(function(){
+    window.Slider = class {
+        constructor({...galery}){
+            this.images = document.querySelectorAll(galery.images);
+            this.btPrev = document.querySelector(galery.prev);
+            this.btNext = document.querySelector(galery.next);
+            this.indicator = document.querySelectorAll(galery.indicator)
+            this.interval = galery.interval; 
+            this.flag = galery.flag
+            
+            this.i = 0;
+            this.btPrev.addEventListener('click', function(e){
+                e.preventDefault()
+                this.showPrevSlide()
+            }.bind(this));
+            this.btNext.addEventListener('click', function(e){
+                e.preventDefault()
+                this.showNextSlide()
+            }.bind(this));
 
-    })
-    sliderArrowRight.addEventListener('click', function(e){
-        e.preventDefault();
-        sliderItems.forEach(function(item){
-            item.classList.add('active_slide');
-        })
-    })
+            if(this.flag){
+                setInterval(this.showNextSlide.bind(this), this.interval);
+            }
+            
+        }
+        
+        showPrevSlide(){
+            
+            this.images[this.i].classList.remove('slider__item_main_active');
+            this.indicator[this.i].classList.remove('slider-indicator_active');
+            
+            this.i--;
+            if( this.i < 0){
+                this.i = this.images.length - 1;
+            }
+            this.images[this.i].classList.add('slider__item_main_active');
+            this.indicator[this.i].classList.add('slider-indicator_active');
+            return this.i
+        }
     
-}*/
+        showNextSlide() {
+            
+            this.images[this.i].classList.remove('slider__item_main_active');
+            this.indicator[this.i].classList.remove('slider-indicator_active')
+            this.i++;
+            if( this.i >= this.images.length){
+            this.i = 0;
+            }
+            this.images[this.i].classList.add('slider__item_main_active');
+            this.indicator[this.i].classList.add('slider-indicator_active');
+            return this.i
+        }
+    }
+}());
+/*window.onload = function(e){
 
+  new Slider({
+    images: '.gallery-1 .photo img',
+    next: '.gallery-1 .tabs .next',
+    prev: '.gallery-1 .tabs .prev',
+    indicator:'';
+    interval: '2000'
+  });
 
+  function Slider(images){
 
+    this.images = document.querySelectorAll(images.images);
+    this.btPrev = document.querySelector(images.prev);
+    this.btNext = document.querySelector(images.next);
+    this.interval = images.interval;
 
-/*
-function goSlder(sliderItems){
-    let i = 0
-     if(i >= sliderItems.length - 1){
+    
+   let i = 0;
+    this.prev = function() {
+      this.images[i].className = "";
+       i--;
+       if( i < 0){
+         i = this.images.length - 1;
+       }
+       this.images[i].className = "shown";
+      },
+
+    this.next = function() {
+      this.images[i].className = "";
+      i++;
+      if( i >= this.images.length){
         i = 0;
-        console.log('function go 1')
-     }
-     sliderItems[i].classList.remove('slider__item_main_active');
-    i = i + 1;
-    sliderItems[i].classList.add('slider__item_main_active');
-    console.log('function go')
+      }
+      this.images[i].className = "shown";
     }
 
-*/
+    this.btPrev.addEventListener('click', this.prev.bind(this));
+    this.btNext.addEventListener('click', this.next.bind(this));
 
-var slideIndex = 1;
-showSlides(slideIndex);
+    setInterval(this.next.bind(this), this.interval);
 
-/* Функция увеличивает индекс на 1, показывает следующй слайд*/
-function plusSlide() {
-    showSlides(slideIndex += 1);
-}
+   }
 
-/* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
-function minusSlide() {
-    showSlides(slideIndex -= 1);  
-}
-
-/* Устанавливает текущий слайд */
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-/* Основная функция слайдера */
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("item");
-    var dots = document.getElementsByClassName("slider-dots_item");
-    if (n > slides.length) {
-      slideIndex = 1
-    }
-    if (n < 1) {
-        slideIndex = slides.length
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {
-       slideIndex = 1
- }
-    if (n < 1) {
-       slideIndex = slides.length
-}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active","");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-
-let slideIndex = 0;
- showSlides();
-   
- function showSlides() {
- let i;
- let slides = document.querySelectorAll('.slider__item_main');
-    for (i = 0; i < slides.length; i++ ){
-        sliderItems[i].classList.remove('slider__item_main_active');
-    }
- slideIndex++;
-    if (slideIndex > slides.length) { 
-       slideIndex = 1;
-}
-    sliderItems[slideIndex-1].classList.add('slider__item_main_active');
-    setTimeout(showSlides, 5000);
- }
-    
- 
-let i = 0;
-sliderArrowLeft.addEventListener('click', function(e){
-     e.preventDefault();
-    
-    sliderItems[i].classList.remove('slider__item_main_active');
-    i = i - 1;
-    if(i < 0){
-        i = sliderItems.length - 1;
-    }
-    sliderItems[i].classList.add('slider__item_main_active');
-
-    });
-sliderArrowRight.addEventListener('click', function(e){
-     e.preventDefault();
-    sliderItems[i].classList.remove('slider__item_main_active');
-    i = i + 1;
-    if(i > sliderItems.length - 1){
-        i = 0;
-    }
-    sliderItems[i].classList.add('slider__item_main_active');
-
-    });
-
-/* sliderArrowRight.onclick = function(e){
-     e.preventDefault();
-    sliderItems[i].classList.remove('slider__item_main_active');
-    i = i - 1;
-    if(i < 0){
-        i = sliderItems.length - 1;
-    }
-    sliderItems[i].classList.add('slider__item_main_active');
 }*/
 
 

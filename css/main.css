@@ -1411,7 +1411,7 @@ iframe{
     align-items: flex-start;
 }
 .features__big{
-    max-width: 73%;
+    width: 73%;
 }
 .features__wrapper_big{
     height: 600px;

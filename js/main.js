@@ -50,3 +50,4 @@ function openAccordion(titles, body, classActive, flag){
     });
    
 }
+
